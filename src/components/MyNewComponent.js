@@ -20,14 +20,12 @@ class MyNewComponent extends Component {
     }
 
     fieldChange(event) {
-        this.fieldValue = event.target.value
+        this.fieldValue = event.target.value;
     }
 
     onClick(event) {
-        event.preventDefault()
-        let bandName = this.fieldValue
-        let self = this.fieldchange
-
+        event.preventDefault();
+        let bandName = this.fieldValue;
         this.props.selectBand(bandName);
 
         // getBandInfo(bandName).then(
@@ -39,7 +37,7 @@ class MyNewComponent extends Component {
 
     handleKeyPress(event) {
         if(event.charCode === 13){
-            this.onclick(event)
+            this.onclick(event);
         }
     }
 
@@ -54,7 +52,7 @@ class MyNewComponent extends Component {
     }
 
     render() {
-        console.log("mynewcomponent.render()")
+        console.log("mynewcomponent.render()");
         return <div>
             <section>
                 <Banner banner={this.props.banner}/>
@@ -63,8 +61,6 @@ class MyNewComponent extends Component {
                 <input id="myInput" onChange={this.fieldchange} onKeyPress={this.handlekeypress}/>
                 {' '}
                 <button type="submit" onClick={this.onclick}>click to change band</button>
-            </section>
-            <section>
             </section>
             {this.renderDetails()}
             <ShowsList/>
