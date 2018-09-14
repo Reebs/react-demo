@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 
-class ShowList extends Component {
+export default class ShowList extends Component {
+
+    constructor(props) {
+        super();
+
+
+    }
     renderList() {
         return this.props.shows.map((show) => {
             return (
@@ -12,7 +18,7 @@ class ShowList extends Component {
     render() {
         return (
         <ul className="list-group col-sm-4">
-            {this.renderList()}
+            {this.props.shows && this.renderList()}
         </ul>
 
         )
@@ -21,8 +27,8 @@ class ShowList extends Component {
 
 }
 
-function mapStateToProps(state) {
-   return {shows: state.shows};
-}
-
-export default connect(mapStateToProps)(ShowList)
+// function mapStateToProps(state) {
+//    return {shows: state.shows};
+// }
+//
+// export default connect(mapStateToProps)(ShowList)
